@@ -27,22 +27,30 @@ throw new Error("Enter a valid GitHub Pages or repo URL");
 }
 
 function runConversion() {
-const value = input.value.trim();
-copyBtn.disabled = true;
+  const value = input.value.trim();
+  copyBtn.disabled = true;
 
-if (!value) {
-    outputText.textContent = "Please enter a URL";
+  // Remove previous animation class
+  outputText.classList.remove("error-shake");
+  
+  // Force reflow to restart animation
+  void outputText.offsetWidth;
+
+  if (!value) {
+    outputText.textContent = "Please enter a URL.";
+    outputText.classList.add("error-shake");
     return;
-}
+  }
 
-try {
+  try {
     const result = convertUrl(value);
     outputText.innerHTML = `<a href="${result}" target="_blank">${result}</a>`;
     copyBtn.dataset.copy = result;
     copyBtn.disabled = false;
-} catch (err) {
+  } catch (err) {
     outputText.textContent = err.message;
-}
+    outputText.classList.add("error-shake");
+  }
 }
 
 // Convert on button click
