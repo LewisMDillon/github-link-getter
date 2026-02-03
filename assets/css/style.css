@@ -1,0 +1,211 @@
+/* GitHub-inspired color palette */
+:root {
+  --bg: #0d1117;
+  --card-bg: #161b22;
+  --border: #30363d;
+  --text: #c9d1d9;
+  --muted: #8b949e;
+  --accent: #2f81f7;
+  --accent-hover: #1f6feb;
+  --success-bg: #0d1117;
+  --input-bg: #0d1117;
+}
+
+body.light {
+  --bg: #ffffff;
+  --card-bg: #f6f8fa;
+  --border: #d0d7de;
+  --text: #24292f;
+  --muted: #57606a;
+  --accent: #0969da;
+  --accent-hover: #0550ae;
+  --input-bg: #ffffff;
+}
+
+.theme-toggle {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.5rem;
+}
+
+#theme-toggle-btn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Base reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.output-box {
+  position: relative;
+  margin-top: 0.4rem;
+  padding: 0.9rem 0.75rem 0.75rem;
+  border-radius: 6px;
+  border: 1px dashed var(--border);
+  background-color: var(--success-bg);
+}
+
+.copy-icon {
+  position: absolute;
+  top: -36px;
+  right: 30px;
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: var(--text);
+  padding: 2px;
+  width: 0;
+}
+
+.copy-icon:hover {
+  color: var(--card-bg);
+  background-color: var(--card-bg);
+}
+
+.copy-icon:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+#copy-img {
+  max-width: 24px;
+}
+
+.copy-tooltip {
+  position: absolute;
+  top: -35px;
+  right: 35px;
+  background-color: var(--card-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 2px 6px;
+  font-size: 0.7rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+
+/* Form */
+label {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+  color: var(--muted);
+}
+
+input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background-color: var(--input-bg);
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+input::placeholder {
+  color: var(--muted);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* Button */
+button {
+  width: 100%;
+  background-color: var(--accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.65rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+button:hover {
+  background-color: var(--accent-hover);
+}
+
+/* Output */
+.output {
+  margin-top: 1.5rem;
+}
+
+.output-label {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.output-box p {
+  font-size: 0.85rem;
+  word-break: break-all;
+  color: var(--text);
+}
+
+.output-box a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.output-box a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  margin-top: 3rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+#github-logo {
+  max-width: 20px;
+  margin-top: 10px;
+}
