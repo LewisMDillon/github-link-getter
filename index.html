@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GitHub Pages ↔ Repo Converter</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <main class="container">
+    <div class="card">
+      <h1>GitHub Pages ↔ Repo Converter</h1>
+      <p class="subtitle">
+        Convert a GitHub Pages link to its repository, or the other way around.
+      </p>
+
+      <label for="url-input">GitHub URL</label>
+      <input
+        id="url-input"
+        type="url"
+        placeholder="Github repository or deployed link"
+      />
+
+      <button type="button">
+        Convert Link
+      </button>
+
+      <div class="output">
+        <span class="output-label">Converted URL</span>
+        <div class="output-box">
+            <button
+                id="copy-btn"
+                class="copy-icon"
+                title="Copy to clipboard"
+                aria-label="Copy to clipboard"
+                disabled
+            >
+                <img src="assets/img/copy.png" alt="copy button" id="copy-img">
+            </button>
+
+            <span id="copy-tooltip" class="copy-tooltip">Copied!</span>
+
+            <p id="output-text">Converted link will appear here</p>
+            </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>
+        Made by Lewis Dillon
+      </p>
+      <p><a href="https://github.com/LewisMDillon"><img src="assets/img/github-logo.png" alt="github logo link" id="github-logo"></a></p>
+    </footer>
+  </main>
+</body>
+<script src="assets/js/script.js"></script>
+</html>
