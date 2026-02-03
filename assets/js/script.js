@@ -23,7 +23,7 @@ return `https://${parts[0]}.github.io/${parts[1]}/`;
 function convertUrl(url) {
 if (url.includes(".github.io")) return pagesToRepo(url);
 if (url.includes("github.com")) return repoToPages(url);
-throw new Error("Enter a valid GitHub Pages or repo URL");
+throw new Error("Please enter a valid GitHub Pages or repo URL");
 }
 
 function runConversion() {
@@ -37,7 +37,7 @@ function runConversion() {
   void outputText.offsetWidth;
 
   if (!value) {
-    outputText.textContent = "Please enter a URL.";
+    outputText.textContent = "Please enter a URL";
     outputText.classList.add("error-shake");
     return;
   }
